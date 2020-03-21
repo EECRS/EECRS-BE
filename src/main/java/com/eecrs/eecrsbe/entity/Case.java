@@ -3,21 +3,23 @@ package com.eecrs.eecrsbe.entity;
 import lombok.Data;
 
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import java.time.LocalDate;
 
 @Data
 public class Case extends BaseEntity {
-    private Integer confirmed;
 
-    private Integer deaths;
+    @ManyToOne
+    @JoinColumn
+    private Location location;
 
-    private Integer recovered;
+    @Column
+    private CaseType type;
 
-    @Column(name = "new_confirmed")
-    private Integer newConfirmed;
+    @Column
+    private Integer amount;
 
-    @Column(name = "new_deaths")
-    private Integer newDeaths;
-
-    @Column(name = "new_recovered")
-    private Integer newRecovered;
+    @Column
+    private LocalDate reportedDate;
 }

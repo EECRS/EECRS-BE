@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import java.time.LocalDate;
 
 @Data
 public class Location {
@@ -18,4 +19,5 @@ public class Location {
 
     @Column
     private String longitude;
+
 }
