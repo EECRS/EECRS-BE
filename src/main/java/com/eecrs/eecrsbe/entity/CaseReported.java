@@ -8,10 +8,10 @@ import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 @Data
-public class Case extends BaseEntity {
+public class CaseReported extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "location")
     private Location location;
 
     @Column
