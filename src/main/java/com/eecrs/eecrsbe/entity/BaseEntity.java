@@ -1,37 +1,43 @@
 package com.eecrs.eecrsbe.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @MappedSuperclass
 @Data
 public class BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Basic(optional = false)
-    @Column(name = "id", nullable = false)
-    private long id;
+
+    @Column(name = "row_id", nullable = false)
+    private UUID _randomId = UUID.randomUUID();
 
     @Column(name = "version")
     @Version
     private Integer version = 0;
 
-    @Column(name = "created_by", length = 20)
-    private String createdBy;
+//    @Column(name = "created_by", length = 20, nullable = false)
+//    @CreatedBy
+//    private String createdBy;
 
-    @Column(name = "created_date")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date createdAt;
+    @Column(name = "created_date", nullable = false)
+    @CreatedDate
+    private Date createdAt = new Date();
 
-    @Column(name = "updated_by", length = 20)
-    private String updatedBy;
+//    @Column(name = "updated_by", length = 20, nullable = false)
+//    @LastModifiedBy
+//    private String updatedBy;
 
-    @Column(name = "updated_date")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date updatedAt;
-
+    @Column(name = "updated_date", nullable = false)
+    @LastModifiedDate
+    private Date updatedAt = new Date();
 
     private static Date uCreatedAt=null;
     private static String uCreatedBy=null;
@@ -39,7 +45,7 @@ public class BaseEntity {
     public void setUPCreatedAt(){
 
         this.createdAt=uCreatedAt;
-        this.createdBy=uCreatedBy;
+//        this.createdBy=uCreatedBy;
 
     }
 
