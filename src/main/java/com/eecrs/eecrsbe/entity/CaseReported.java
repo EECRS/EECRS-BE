@@ -8,16 +8,18 @@ import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
 @Data
-public class Location {
+public class CaseReported extends BaseEntity {
 
     @ManyToOne
-    @JoinColumn(name = "woreda")
-    private Woreda woreda;
+    @JoinColumn(name = "location")
+    private Location location;
 
     @Column
-    private String latitude;
+    private CaseType type;
 
     @Column
-    private String longitude;
+    private Integer amount;
 
+    @Column
+    private LocalDate reportedDate;
 }

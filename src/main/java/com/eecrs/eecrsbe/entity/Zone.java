@@ -9,6 +9,6 @@ import javax.persistence.Column;
 public class Zone  extends BaseEntity{
     @Column(name = "name")
     private String name;
-
+    @Column
     private Region region;
 }
