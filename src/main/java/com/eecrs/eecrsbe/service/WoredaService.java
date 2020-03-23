@@ -7,8 +7,7 @@ import java.util.List;
 
 public interface WoredaService {
 
-    Woreda findById(long id);
-    Woreda findByNameAndId(String name, long id);
+    Woreda findById(Integer id);
     List<Woreda> findBySubCity(SubCity subCity);
 
 }

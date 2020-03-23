@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface CaseReportedService {
 
-    CaseReported findById(long id);
+    CaseReported findById(Integer id);
     List<CaseReported> findByType(CaseType caseType);
     List<CaseReported> findByReportedDate(LocalDate reportedDate);
     List<CaseReported> findByLocation(Location location);

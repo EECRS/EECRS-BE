@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ZoneService {
 
-    Zone findById(long id);
+    Zone findById(Integer id);
     List<Zone> findByRegion(Region region);
 }

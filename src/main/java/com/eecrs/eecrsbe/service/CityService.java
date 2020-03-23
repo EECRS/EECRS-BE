@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface CityService {
 
-    City findById(long id);
+    City findById(Integer id);
     List<City> findByZone(Zone zone);
 }

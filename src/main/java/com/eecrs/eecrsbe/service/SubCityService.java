@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface SubCityService {
 
-    SubCity findById(long id);
+    SubCity findById(Integer id);
     List<SubCity> findByCity(City city);
 }

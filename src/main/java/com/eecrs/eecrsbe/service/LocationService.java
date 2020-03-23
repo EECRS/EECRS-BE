@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface LocationService {
 
-    Location findById(long id);
+    Location findById(Integer id);
     Location findByCoordinate(String longitude, String latitude);
     List<Location> findByWoreda(Woreda woreda);
 }
