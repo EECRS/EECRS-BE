@@ -12,7 +12,7 @@
     <artifactId>eecrs-be</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>eecrs-be</name>
-    <description>Ethiopian epidemic case reporitng system</description>
+    <description>Ethiopian epidemic case reporting system</description>
 
     <properties>
         <java.version>1.8</java.version>
