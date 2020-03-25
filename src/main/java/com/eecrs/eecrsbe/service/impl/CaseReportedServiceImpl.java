@@ -20,6 +20,11 @@ public class CaseReportedServiceImpl implements CaseReportedService {
     }
 
     @Override
+    public List<CaseReported> findAll() {
+        return caseReportedRepository.findAll();
+    }
+
+    @Override
     public CaseReported findById(Integer id) {
         return caseReportedRepository.getOne(id);
     }

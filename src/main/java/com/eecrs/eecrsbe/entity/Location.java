@@ -2,13 +2,17 @@ package com.eecrs.eecrsbe.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Data
+@Entity
 public class Location {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column()
+    private long id;
 
     @ManyToOne
     @JoinColumn(name = "woreda")

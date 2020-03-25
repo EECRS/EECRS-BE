@@ -13,5 +13,6 @@ public interface CaseReportedService {
     List<CaseReported> findByLocation(Location location);
     List<CaseReported> findByCity(City city);
     List<CaseReported> findByZone(Zone zone);
+    List<CaseReported> findAll();
 
 }
